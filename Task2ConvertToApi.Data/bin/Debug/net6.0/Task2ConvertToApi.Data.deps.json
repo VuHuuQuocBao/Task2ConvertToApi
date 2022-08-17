@@ -10,6 +10,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore.Design": "6.0.8",
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.8",
           "Microsoft.Extensions.Configuration": "6.0.1",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "6.0.0",
@@ -76,6 +77,11 @@
             "assemblyVersion": "6.0.8.0",
             "fileVersion": "6.0.822.36205"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/6.0.8": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "6.0.8"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
@@ -347,6 +353,13 @@
       "sha512": "sha512-laj1Kx0Ifny8E7dCCXV4+hYJkly8t9Gjc6/Trds1W4xg/vf/dzyuxTCUqQMHtGv29C8zV1+C2wnWVOcwWin5FQ==",
       "path": "microsoft.entityframeworkcore.relational/6.0.8",
       "hashPath": "microsoft.entityframeworkcore.relational.6.0.8.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/6.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+wjKy16Vdz/ArHFvJZ1xXG241OZMFbTY0lS8vTQL4tfo8slX/h1J9PkzbWJjG6G7SMharUwvigIo+vrMO628Xg==",
+      "path": "microsoft.entityframeworkcore.tools/6.0.8",
+      "hashPath": "microsoft.entityframeworkcore.tools.6.0.8.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
       "type": "package",

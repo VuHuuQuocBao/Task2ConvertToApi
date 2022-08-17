@@ -1,17 +1,22 @@
 using Data.EF;
 using Microsoft.EntityFrameworkCore;
 
+/*using Task2ConvertToApi.BackendApi.BackGround;*/
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+/*builder.Services.AddSingleton<IWorker, Worker>();
+builder.Services.AddHttpClient();
+builder.Services.AddHostedService<BackGroundCalculateWorkTimePerDay>();*/
 
-var connectionString = builder.Configuration.GetConnectionString("Task1Db");
+var connectionString = builder.Configuration.GetConnectionString("Task2Db");
 
 builder.Services.AddDbContext<Task2DbContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-});
+}/*, ServiceLifetime.Singleton*/);
 
 builder.Services.AddSwaggerGen(c =>
 {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qS+NJIJW7Z59fn1OUZRrLbzLhTbK67m6Pp+K8D+AdYZvAbj+Fgy6Rwhuq7g1iSgakedzo45geHp1KvbuafQCWQ==",
+  "dgSpecHash": "w2OCDMpOai6vTcTZe9NYf/tM3/o1mqlRLUvRUfuLTxbp4pcTku5IhJRTGWvtnhROMf7h6W8WG9SOxW/zFcZKYg==",
   "success": true,
   "projectFilePath": "F:\\Users\\VU Huu Quoc Bao\\Source\\Repos\\Task2ConvertToApi\\Task2ConvertToApi.Data\\Task2ConvertToApi.Data.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\VU Huu Quoc Bao\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.8\\microsoft.entityframeworkcore.analyzers.6.0.8.nupkg.sha512",
     "C:\\Users\\VU Huu Quoc Bao\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.8\\microsoft.entityframeworkcore.design.6.0.8.nupkg.sha512",
     "C:\\Users\\VU Huu Quoc Bao\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.8\\microsoft.entityframeworkcore.relational.6.0.8.nupkg.sha512",
+    "C:\\Users\\VU Huu Quoc Bao\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.8\\microsoft.entityframeworkcore.tools.6.0.8.nupkg.sha512",
     "C:\\Users\\VU Huu Quoc Bao\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\VU Huu Quoc Bao\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\VU Huu Quoc Bao\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",

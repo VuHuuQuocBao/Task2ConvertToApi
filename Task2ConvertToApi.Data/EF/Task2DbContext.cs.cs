@@ -1,6 +1,7 @@
 ﻿using Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Project.Data.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Data.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            /*  modelBuilder.Seed();*/
             //Data seeding
             //base.OnModelCreating(modelBuilder);
         }

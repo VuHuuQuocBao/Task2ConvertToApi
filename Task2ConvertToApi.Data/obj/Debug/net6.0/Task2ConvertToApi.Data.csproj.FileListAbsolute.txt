@@ -12,3 +12,17 @@ F:\Users\VU Huu Quoc Bao\Source\Repos\Project\Task2ConvertToApi\Task2ConvertToAp
 F:\Users\VU Huu Quoc Bao\Source\Repos\Project\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.pdb
 F:\Users\VU Huu Quoc Bao\Source\Repos\Project\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.genruntimeconfig.cache
 F:\Users\VU Huu Quoc Bao\Source\Repos\Project\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\ref\Task2ConvertToApi.Data.dll
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\bin\Debug\net6.0\Task2ConvertToApi.Data.deps.json
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\bin\Debug\net6.0\Task2ConvertToApi.Data.runtimeconfig.json
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\bin\Debug\net6.0\Task2ConvertToApi.Data.dll
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\bin\Debug\net6.0\Task2ConvertToApi.Data.pdb
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.csproj.AssemblyReference.cache
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.GeneratedMSBuildEditorConfig.editorconfig
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.AssemblyInfoInputs.cache
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.AssemblyInfo.cs
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.csproj.CoreCompileInputs.cache
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.dll
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\refint\Task2ConvertToApi.Data.dll
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.pdb
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\Task2ConvertToApi.Data.genruntimeconfig.cache
+F:\Users\VU Huu Quoc Bao\Source\Repos\Task2ConvertToApi\Task2ConvertToApi.Data\obj\Debug\net6.0\ref\Task2ConvertToApi.Data.dll

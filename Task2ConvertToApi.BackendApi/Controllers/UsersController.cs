@@ -1,4 +1,5 @@
 ﻿using Data.EF;
+using Data.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -56,8 +57,9 @@ namespace Task2ConvertToApi.BackendApi.Controllers
         [HttpGet("CalculateWorkTimePerDay")]
         public int CalculateWorkTimePerDay(Guid userId, int day, int month, int year)
         {
-            var checkIn = _context.UserDailyTimesheetModels.Where(x => x.Day == day && x.Month == month && x.Year == year && x.UserId == userId).Select(x => x.CheckInTime).ToList();
-            var checkOut = _context.UserDailyTimesheetModels.Where(x => x.Day == day && x.Month == month && x.Year == year && x.UserId == userId).Select(x => x.CheckOutTime).ToList();
+            var query = _context.UserDailyTimesheetModels.Where(x => x.Day == day && x.Month == month && x.Year == year && x.UserId == userId);
+            var checkIn = query.Select(x => x.CheckInTime).ToList();
+            var checkOut = query.Select(x => x.CheckOutTime).ToList();
             if (checkIn == null)
             {
                 return 0;
@@ -87,6 +89,9 @@ namespace Task2ConvertToApi.BackendApi.Controllers
             var result2Final = result2HourConvertToSecond + result2MinuteConverToSecond + result2Second;
             var finalResult = result1Final + result2Final;
 
+            var result = query.ToList();
+            result[0].TotalActualWorkingTimeInSeconds = finalResult;
+            _context.SaveChanges();
             return finalResult;
         }
 
@@ -158,6 +163,68 @@ namespace Task2ConvertToApi.BackendApi.Controllers
                 result.Add(new DateTime(year, month, day));
             }
             return result;
+        }
+
+        /// <summary>
+        /// API seed data
+        /// </summary>
+        /// <returns></returns>
+
+        [HttpGet("SeedData")]
+        public async Task<IActionResult> SeedData()
+        {
+            List<UserDailyTimesheetModel> seedData = new List<UserDailyTimesheetModel>()
+              {
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 1, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 1, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 1, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 2, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 2, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 2, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 3, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 3, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 3, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 4, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 4, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 4, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 5, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 5, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 5, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 6, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 6, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 6, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 8, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 8, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 8, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 9, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 9, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 9, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 10, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 10, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 10, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 11, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 11, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 11, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 12, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 12, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 12, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 15, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 15, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 15, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 16, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 16, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 16, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 17, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 17, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 17, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 18, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 18, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 18, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 19, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 19, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 19, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 20, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 20, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 20, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 22, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 22, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 22, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 23, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 23, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 23, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 24, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 24, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 24, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 25, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 25, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 25, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 26, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 26, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 26, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 27, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 27, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 27, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 29, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 29, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 29, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 30, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 30, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 30, 18, 0, 0) },
+                 new UserDailyTimesheetModel() { UserId = new Guid("8bf9ddce-be27-4123-a27a-d5802873e3d1"), Day = 31, Month = 8, Year = 2022, IsLate = false, TotalLateInSeconds = null, TotalActualWorkingTimeInSeconds = null, Status = null, CheckInTime = new DateTime(2022, 08, 31, 9, 0, 0), CheckOutTime = new DateTime(2022, 08, 31, 18, 0, 0) }
+              };
+
+            await _context.UserDailyTimesheetModels.AddRangeAsync(seedData);
+            _context.SaveChanges();
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// phan trang
+        /// </summary>
+        /// <returns></returns>
+
+        [HttpGet("FilterAndPaging")]
+        public IActionResult FilterAndPaging(int pageIndex, int pageSize, int month, int year, Guid userId)
+        {
+            // select + filter
+            var query = _context.UserDailyTimesheetModels.Where(x => x.Month == month && x.Year == year && x.UserId == userId);
+
+            // paging
+            var data = query.Skip((pageIndex - 1) * pageSize)
+                .Take(pageSize).ToList();
+
+            return Ok(data);
         }
     }
 }

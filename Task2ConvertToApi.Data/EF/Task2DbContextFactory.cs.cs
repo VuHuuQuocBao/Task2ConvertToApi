@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System;
 
-/*using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,4 +23,4 @@ namespace Data.EF
             return new Task2DbContext(optionsBuilder.Options);
         }
     }
-}*/
+}
